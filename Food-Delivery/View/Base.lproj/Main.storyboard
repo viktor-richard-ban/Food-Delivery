@@ -36,12 +36,38 @@
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Best Dishes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-AE-oDU">
+                                                <rect key="frame" x="16" y="100" width="382" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Nl5-NJ-TCu">
+                                                <rect key="frame" x="0.0" y="150" width="414" height="350"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="350" id="fUe-Ci-qne"/>
+                                                </constraints>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O78-Od-s1H">
+                                                    <size key="itemSize" width="228" height="350"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells/>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="0Ph-AE-oDU" secondAttribute="trailing" constant="16" id="1u6-Tx-Wfn"/>
+                                            <constraint firstItem="Nl5-NJ-TCu" firstAttribute="leading" secondItem="Qrm-xu-t6a" secondAttribute="leading" id="2Vv-C8-y4G"/>
                                             <constraint firstAttribute="trailing" secondItem="Y6P-AH-Tjt" secondAttribute="trailing" id="2re-DD-G08"/>
+                                            <constraint firstItem="0Ph-AE-oDU" firstAttribute="leading" secondItem="Qrm-xu-t6a" secondAttribute="leading" constant="16" id="E9Y-Z9-S6b"/>
                                             <constraint firstItem="Y6P-AH-Tjt" firstAttribute="leading" secondItem="Qrm-xu-t6a" secondAttribute="leading" id="LEL-OE-LCZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nl5-NJ-TCu" secondAttribute="trailing" id="cw0-s4-39X"/>
                                             <constraint firstItem="Y6P-AH-Tjt" firstAttribute="top" secondItem="Qrm-xu-t6a" secondAttribute="top" constant="20" id="g15-FH-ROo"/>
+                                            <constraint firstItem="Nl5-NJ-TCu" firstAttribute="top" secondItem="0Ph-AE-oDU" secondAttribute="bottom" constant="20" id="hhk-Yi-TPK"/>
+                                            <constraint firstItem="0Ph-AE-oDU" firstAttribute="top" secondItem="Y6P-AH-Tjt" secondAttribute="bottom" constant="30" id="qmU-vL-GHi"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -67,6 +93,7 @@
                     <navigationItem key="navigationItem" title="Food Delivery" largeTitleDisplayMode="always" id="YtA-fd-oUQ"/>
                     <connections>
                         <outlet property="filterCollectionView" destination="Y6P-AH-Tjt" id="6hy-bd-L9F"/>
+                        <outlet property="foodCollectionView" destination="Nl5-NJ-TCu" id="gZQ-ou-nyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

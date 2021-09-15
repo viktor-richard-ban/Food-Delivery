@@ -16,4 +16,11 @@ class MainViewModel {
         FilterModel(title: "Hungarian", isActive: false)
     ]
     
+    var foodModels: [FoodModel] = [
+        FoodModel(name: "Udon Soup With Chicket", price: 13),
+        FoodModel(name: "Ramen Soup with Pork", price: 12),
+        FoodModel(name: "Coca Cola", price: 3),
+        FoodModel(name: "Diet Coca Cola", price: 4)
+    ]
+    
 }

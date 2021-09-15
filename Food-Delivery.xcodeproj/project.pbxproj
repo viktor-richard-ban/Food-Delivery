@@ -11,6 +11,11 @@
 		8E64C40E26F28DB400126A95 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E64C40D26F28DB400126A95 /* Colors.xcassets */; };
 		8E64C41326F2920100126A95 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64C41226F2920100126A95 /* FilterModel.swift */; };
 		8E64C41826F2925B00126A95 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64C41726F2925B00126A95 /* MainViewModel.swift */; };
+		8E64C41D26F2978900126A95 /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64C41C26F2978900126A95 /* FoodModel.swift */; };
+		8E64C42D26F29B5F00126A95 /* FoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64C42B26F29B5F00126A95 /* FoodCollectionViewCell.swift */; };
+		8E64C42E26F29B5F00126A95 /* FoodCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E64C42C26F29B5F00126A95 /* FoodCollectionViewCell.xib */; };
+		8E64C43426F2A24B00126A95 /* FilterImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E64C43226F2A24B00126A95 /* FilterImageCollectionViewCell.swift */; };
+		8E64C43526F2A24B00126A95 /* FilterImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E64C43326F2A24B00126A95 /* FilterImageCollectionViewCell.xib */; };
 		8ED4875326F27CCE0075B436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4875226F27CCE0075B436 /* AppDelegate.swift */; };
 		8ED4875526F27CCE0075B436 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4875426F27CCE0075B436 /* SceneDelegate.swift */; };
 		8ED4875726F27CCE0075B436 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED4875626F27CCE0075B436 /* ViewController.swift */; };
@@ -45,6 +50,11 @@
 		8E64C40D26F28DB400126A95 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		8E64C41226F2920100126A95 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		8E64C41726F2925B00126A95 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		8E64C41C26F2978900126A95 /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
+		8E64C42B26F29B5F00126A95 /* FoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E64C42C26F29B5F00126A95 /* FoodCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodCollectionViewCell.xib; sourceTree = "<group>"; };
+		8E64C43226F2A24B00126A95 /* FilterImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E64C43326F2A24B00126A95 /* FilterImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		8ED4874F26F27CCE0075B436 /* Food-Delivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food-Delivery.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ED4875226F27CCE0075B436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ED4875426F27CCE0075B436 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				8E64C41226F2920100126A95 /* FilterModel.swift */,
+				8E64C41C26F2978900126A95 /* FoodModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,6 +185,10 @@
 			children = (
 				8ED4878F26F282C90075B436 /* FilterCollectionViewCell.swift */,
 				8ED4879026F282C90075B436 /* FilterCollectionViewCell.xib */,
+				8E64C42B26F29B5F00126A95 /* FoodCollectionViewCell.swift */,
+				8E64C42C26F29B5F00126A95 /* FoodCollectionViewCell.xib */,
+				8E64C43226F2A24B00126A95 /* FilterImageCollectionViewCell.swift */,
+				8E64C43326F2A24B00126A95 /* FilterImageCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -281,11 +296,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E64C42E26F29B5F00126A95 /* FoodCollectionViewCell.xib in Resources */,
 				8E64C40E26F28DB400126A95 /* Colors.xcassets in Resources */,
 				8ED4875F26F27CD40075B436 /* LaunchScreen.storyboard in Resources */,
 				8ED4875C26F27CD40075B436 /* Assets.xcassets in Resources */,
 				8ED4879226F282C90075B436 /* FilterCollectionViewCell.xib in Resources */,
 				8ED4875A26F27CCE0075B436 /* Main.storyboard in Resources */,
+				8E64C43526F2A24B00126A95 /* FilterImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,12 +327,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E64C43426F2A24B00126A95 /* FilterImageCollectionViewCell.swift in Sources */,
 				8E64C41826F2925B00126A95 /* MainViewModel.swift in Sources */,
 				8E64C40926F28B5400126A95 /* Extensions.swift in Sources */,
 				8ED4875726F27CCE0075B436 /* ViewController.swift in Sources */,
+				8E64C41D26F2978900126A95 /* FoodModel.swift in Sources */,
 				8ED4875326F27CCE0075B436 /* AppDelegate.swift in Sources */,
 				8E64C41326F2920100126A95 /* FilterModel.swift in Sources */,
 				8ED4879126F282C90075B436 /* FilterCollectionViewCell.swift in Sources */,
+				8E64C42D26F29B5F00126A95 /* FoodCollectionViewCell.swift in Sources */,
 				8ED4875526F27CCE0075B436 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

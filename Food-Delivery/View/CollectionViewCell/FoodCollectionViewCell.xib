@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FoodCollectionViewCell" id="gTV-IL-0wX" customClass="FoodCollectionViewCell" customModule="Food_Delivery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="290" height="392"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="290" height="392"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1c-0U-gIQ" userLabel="ContainerView">
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="392"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-PH-Tyj" userLabel="RoundedBackgroundView">
+                                <rect key="frame" x="0.0" y="0.0" width="228" height="350"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="228" id="cnr-Sa-ngG"/>
+                                    <constraint firstAttribute="height" constant="350" id="eTn-UG-hdf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QDR-PH-Tyj" firstAttribute="top" secondItem="E1c-0U-gIQ" secondAttribute="top" id="4qX-YY-7FA"/>
+                            <constraint firstItem="QDR-PH-Tyj" firstAttribute="leading" secondItem="E1c-0U-gIQ" secondAttribute="leading" id="cQ3-ts-gdo"/>
+                            <constraint firstAttribute="trailing" secondItem="QDR-PH-Tyj" secondAttribute="trailing" priority="800" id="rcE-Tf-moD"/>
+                            <constraint firstAttribute="bottom" secondItem="QDR-PH-Tyj" secondAttribute="bottom" priority="800" id="uEV-8M-Q5W"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="E1c-0U-gIQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="18D-QN-1Pu"/>
+                <constraint firstAttribute="bottom" secondItem="E1c-0U-gIQ" secondAttribute="bottom" id="F4A-4A-pYo"/>
+                <constraint firstAttribute="trailing" secondItem="E1c-0U-gIQ" secondAttribute="trailing" id="VGL-ct-zSq"/>
+                <constraint firstItem="E1c-0U-gIQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qxh-BW-0P0"/>
+            </constraints>
+            <size key="customSize" width="290" height="392"/>
+            <connections>
+                <outlet property="roundedBackgroundView" destination="QDR-PH-Tyj" id="8Eb-lo-JO9"/>
+            </connections>
+            <point key="canvasLocation" x="56.521739130434788" y="200.89285714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
