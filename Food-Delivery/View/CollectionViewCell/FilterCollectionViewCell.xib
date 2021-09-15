@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterCollectionViewCell" id="gTV-IL-0wX" customClass="FilterCollectionViewCell" customModule="Food_Delivery" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="217" height="104"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="217" height="104"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fux-cf-49i" userLabel="ContainerView">
+                        <rect key="frame" x="0.0" y="0.0" width="217" height="104"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nGZ-bY-ber" userLabel="BackgroundView">
+                                <rect key="frame" x="0.0" y="27" width="217" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCS-Uk-hV5">
+                                        <rect key="frame" x="20" y="0.0" width="177" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="TextColorB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="49i-GY-lo7"/>
+                                    <constraint firstAttribute="trailing" secondItem="yCS-Uk-hV5" secondAttribute="trailing" constant="20" id="XAq-f6-9Fe"/>
+                                    <constraint firstItem="yCS-Uk-hV5" firstAttribute="top" secondItem="nGZ-bY-ber" secondAttribute="top" id="Zje-Sb-pDE"/>
+                                    <constraint firstAttribute="bottom" secondItem="yCS-Uk-hV5" secondAttribute="bottom" id="fz5-w3-vJC"/>
+                                    <constraint firstItem="yCS-Uk-hV5" firstAttribute="leading" secondItem="nGZ-bY-ber" secondAttribute="leading" constant="20" id="g1w-Gc-XRb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nGZ-bY-ber" firstAttribute="leading" secondItem="fux-cf-49i" secondAttribute="leading" id="2md-sy-ETs"/>
+                            <constraint firstItem="nGZ-bY-ber" firstAttribute="centerY" secondItem="fux-cf-49i" secondAttribute="centerY" id="ciV-zs-H0i"/>
+                            <constraint firstAttribute="trailing" secondItem="nGZ-bY-ber" secondAttribute="trailing" id="hJd-HA-UGW"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fux-cf-49i" secondAttribute="bottom" id="JvR-mW-CuX"/>
+                <constraint firstItem="fux-cf-49i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="da8-FN-cfB"/>
+                <constraint firstAttribute="trailing" secondItem="fux-cf-49i" secondAttribute="trailing" id="foq-nf-liM"/>
+                <constraint firstItem="fux-cf-49i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="i8S-Dp-Jz1"/>
+            </constraints>
+            <size key="customSize" width="217" height="104"/>
+            <connections>
+                <outlet property="roundedBackgroundView" destination="nGZ-bY-ber" id="UXD-a2-sn7"/>
+                <outlet property="titleLabel" destination="yCS-Uk-hV5" id="guV-gH-nOS"/>
+            </connections>
+            <point key="canvasLocation" x="38.405797101449281" y="122.54464285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="TextColorB">
+            <color red="0.63921568627450975" green="0.63529411764705879" blue="0.6470588235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
