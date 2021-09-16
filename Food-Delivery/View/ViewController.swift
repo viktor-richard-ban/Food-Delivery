@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var foodCollectionView: UICollectionView!
     
     var viewModel = MainViewModel()
+    var selectedFoodModel: FoodModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,12 @@ class ViewController: UIViewController {
     
     private func updateUI() {
         filterCollectionView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let target = segue.destination as? FoodDetailsViewController {
+            target.foodModel = selectedFoodModel
+        }
     }
 
 }
@@ -69,6 +76,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         default:
             return UICollectionViewCell()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedFoodModel = viewModel.foodModels[indexPath.row]
+        performSegue(withIdentifier: "FoodDetails", sender: self)
     }
     
     private func createFilterImageCell(for indexPath: IndexPath) -> UICollectionViewCell {
