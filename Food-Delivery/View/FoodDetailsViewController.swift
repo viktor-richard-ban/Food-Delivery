@@ -59,8 +59,4 @@ class FoodDetailsViewController: UIViewController {
     @IBAction func orderButtonAction(_ sender: Any) {
         // Call viewModel's order method
     }
-    
-    @IBAction func menuButtonAction(_ sender: Any) {
-        // Navigate to the corresponding screen
-    }
 }

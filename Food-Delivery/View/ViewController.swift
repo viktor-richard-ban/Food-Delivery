@@ -45,8 +45,24 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let target = segue.destination as? FoodDetailsViewController {
-            target.foodModel = selectedFoodModel
+        if segue.identifier == "FoodDetails" {
+            if let target = segue.destination as? FoodDetailsViewController {
+                target.foodModel = selectedFoodModel
+            }
+        }
+    }
+    
+    @IBAction func menuButtonAction(_ sender: UIButton) {
+        // Navigate to the corresponding screen
+        switch sender.tag {
+        case 0:
+            break
+        case 1:
+            break
+        case 2:
+            performSegue(withIdentifier: "Order", sender: self)
+        default:
+            break
         }
     }
 
