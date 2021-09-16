@@ -55,4 +55,8 @@ class FoodDetailsViewController: UIViewController {
             stepperCounter += 1
         }
     }
+    
+    @IBAction func orderButtonAction(_ sender: Any) {
+        // Call viewModel's order method
+    }
 }
