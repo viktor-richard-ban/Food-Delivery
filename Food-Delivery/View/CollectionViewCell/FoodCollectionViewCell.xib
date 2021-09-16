@@ -11,21 +11,66 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FoodCollectionViewCell" id="gTV-IL-0wX" customClass="FoodCollectionViewCell" customModule="Food_Delivery" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="290" height="392"/>
+            <rect key="frame" x="0.0" y="0.0" width="422" height="493"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="290" height="392"/>
+                <rect key="frame" x="0.0" y="0.0" width="422" height="493"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1c-0U-gIQ" userLabel="ContainerView">
-                        <rect key="frame" x="0.0" y="0.0" width="290" height="392"/>
+                        <rect key="frame" x="0.0" y="0.0" width="422" height="493"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-PH-Tyj" userLabel="RoundedBackgroundView">
-                                <rect key="frame" x="0.0" y="0.0" width="228" height="350"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-PH-Tyj" userLabel="RoundedBackgroundView">
+                                <rect key="frame" x="0.0" y="0.0" width="245" height="375"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHP-NR-RQt" userLabel="DetailsContainer">
+                                        <rect key="frame" x="0.0" y="270" width="245" height="105"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 13.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wah-Qs-vmI">
+                                                <rect key="frame" x="20" y="0.0" width="205" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="cew-b7-3bK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="It is a two lines label to show it's length" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96v-eP-Qus">
+                                                <rect key="frame" x="20" y="40" width="205" height="43"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="96v-eP-Qus" firstAttribute="top" secondItem="wah-Qs-vmI" secondAttribute="bottom" constant="5" id="37e-zM-q7Z"/>
+                                            <constraint firstAttribute="trailing" secondItem="96v-eP-Qus" secondAttribute="trailing" constant="20" id="7RD-sp-Wzy"/>
+                                            <constraint firstItem="wah-Qs-vmI" firstAttribute="leading" secondItem="FHP-NR-RQt" secondAttribute="leading" constant="20" id="K3G-CY-yTf"/>
+                                            <constraint firstAttribute="trailing" secondItem="wah-Qs-vmI" secondAttribute="trailing" constant="20" id="MKv-cB-jgm"/>
+                                            <constraint firstAttribute="height" constant="105" id="Sxf-Fb-oyN"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="96v-eP-Qus" secondAttribute="bottom" constant="20" id="ame-Lt-a9N"/>
+                                            <constraint firstItem="96v-eP-Qus" firstAttribute="leading" secondItem="FHP-NR-RQt" secondAttribute="leading" constant="20" id="gfQ-3O-cWb"/>
+                                            <constraint firstItem="wah-Qs-vmI" firstAttribute="top" secondItem="FHP-NR-RQt" secondAttribute="top" id="hC2-AM-YjY"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food_01" translatesAutoresizingMaskIntoConstraints="NO" id="2tx-bN-O1K">
+                                        <rect key="frame" x="45" y="-40" width="315" height="315"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="315" id="oTj-F8-Uc5"/>
+                                            <constraint firstAttribute="width" constant="315" id="xSA-75-IeB"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="228" id="cnr-Sa-ngG"/>
-                                    <constraint firstAttribute="height" constant="350" id="eTn-UG-hdf"/>
+                                    <constraint firstItem="2tx-bN-O1K" firstAttribute="top" secondItem="QDR-PH-Tyj" secondAttribute="top" constant="-40" id="OQs-6z-F16"/>
+                                    <constraint firstAttribute="bottom" secondItem="FHP-NR-RQt" secondAttribute="bottom" id="PN0-C9-k9S"/>
+                                    <constraint firstAttribute="trailing" secondItem="FHP-NR-RQt" secondAttribute="trailing" id="WNV-2i-OWh"/>
+                                    <constraint firstAttribute="width" constant="245" id="cnr-Sa-ngG"/>
+                                    <constraint firstAttribute="height" constant="375" id="eTn-UG-hdf"/>
+                                    <constraint firstAttribute="trailing" secondItem="2tx-bN-O1K" secondAttribute="trailing" constant="-115" id="nzX-yD-he0"/>
+                                    <constraint firstItem="FHP-NR-RQt" firstAttribute="leading" secondItem="QDR-PH-Tyj" secondAttribute="leading" id="ql5-hO-9Y6"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -46,14 +91,18 @@
                 <constraint firstAttribute="trailing" secondItem="E1c-0U-gIQ" secondAttribute="trailing" id="VGL-ct-zSq"/>
                 <constraint firstItem="E1c-0U-gIQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="qxh-BW-0P0"/>
             </constraints>
-            <size key="customSize" width="290" height="392"/>
+            <size key="customSize" width="422" height="493"/>
             <connections>
+                <outlet property="foodImageView" destination="2tx-bN-O1K" id="clX-GJ-V9Y"/>
+                <outlet property="nameLabel" destination="96v-eP-Qus" id="T0d-LQ-pRu"/>
+                <outlet property="priceLabel" destination="wah-Qs-vmI" id="dNz-NN-v1I"/>
                 <outlet property="roundedBackgroundView" destination="QDR-PH-Tyj" id="8Eb-lo-JO9"/>
             </connections>
-            <point key="canvasLocation" x="56.521739130434788" y="200.89285714285714"/>
+            <point key="canvasLocation" x="152.17391304347828" y="234.70982142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="food_01" width="485" height="479"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -10,6 +10,9 @@ import UIKit
 class FoodCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var roundedBackgroundView: UIView!
+    @IBOutlet weak var foodImageView: UIImageView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     static let reuseIdentifier = "FoodCollectionViewCell"
     

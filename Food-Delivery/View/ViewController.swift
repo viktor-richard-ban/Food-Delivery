@@ -98,7 +98,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     private func createFoodCell(for indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = foodCollectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reuseIdentifier, for: indexPath) as? FoodCollectionViewCell {
-            //TODO
+            let foodModel = viewModel.foodModels[indexPath.row]
+            cell.roundedBackgroundView.backgroundColor = UIColor(hex: foodModel.color)
+            cell.nameLabel.text = foodModel.name
+            cell.priceLabel.text = "$\(foodModel.price).00"
+            cell.foodImageView.image = UIImage(named: foodModel.image)
             return cell
         }
         

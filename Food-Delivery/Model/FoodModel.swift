@@ -11,10 +11,14 @@ class FoodModel {
     
     var name: String
     var price: Int
+    var color: String
+    var image: String
     
-    init(name: String, price: Int) {
+    init(name: String, price: Int, color: String, image: String) {
         self.name = name
         self.price = price
+        self.color = color
+        self.image = image
     }
     
 }
