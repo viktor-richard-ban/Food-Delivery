@@ -91,7 +91,9 @@
                             <constraint firstItem="Cbi-Sv-cNM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xaK-st-mIG"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Food Delivery" largeTitleDisplayMode="always" id="YtA-fd-oUQ"/>
+                    <navigationItem key="navigationItem" title="Food Delivery" largeTitleDisplayMode="always" id="YtA-fd-oUQ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ul2-OE-sAu"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="filterCollectionView" destination="Y6P-AH-Tjt" id="6hy-bd-L9F"/>
                         <outlet property="foodCollectionView" destination="Nl5-NJ-TCu" id="gZQ-ou-nyg"/>
