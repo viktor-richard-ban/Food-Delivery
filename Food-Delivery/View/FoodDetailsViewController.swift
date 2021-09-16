@@ -16,9 +16,18 @@ class FoodDetailsViewController: UIViewController {
     
     @IBOutlet weak var roundedFoodView: UIView!
     @IBOutlet weak var roundedIngredientsView: UIView!
-    @IBOutlet weak var orderView: UIView!
+    @IBOutlet weak var roundedOrderView: UIView!
+    
+    @IBOutlet weak var minusStepperButton: UIButton!
+    @IBOutlet weak var plusStepperButton: UIButton!
+    @IBOutlet weak var stepperLabel: UILabel!
     
     var foodModel: FoodModel!
+    var stepperCounter = 1 {
+        didSet {
+            stepperLabel.text = "\(stepperCounter)"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +45,14 @@ class FoodDetailsViewController: UIViewController {
     private func setupUI() {
         roundedFoodView.roundCorners(corners: [.bottomLeft], radius: 50)
         roundedIngredientsView.roundCorners(corners: [.bottomLeft], radius: 50)
-        orderView.roundCorners(corners: [.topLeft], radius: 50)
+        roundedOrderView.roundCorners(corners: [.topLeft], radius: 50)
     }
     
+    @IBAction func stepperButtonAction(_ sender: UIButton) {
+        if sender.titleLabel?.text == "-" && stepperCounter > 1 {
+            stepperCounter -= 1
+        } else if sender.titleLabel?.text == "+" && stepperCounter < 5 {
+            stepperCounter += 1
+        }
+    }
 }
