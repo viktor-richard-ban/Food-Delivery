@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbi-Sv-cNM">
-                                <rect key="frame" x="0.0" y="140" width="390" height="670"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="722" translatesAutoresizingMaskIntoConstraints="NO" id="Qrm-xu-t6a">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="722"/>
@@ -57,17 +57,47 @@
                                                 </collectionViewFlowLayout>
                                                 <cells/>
                                             </collectionView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="D3t-k2-Guy">
+                                                <rect key="frame" x="0.0" y="676" width="390" height="36"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8y-AF-7jm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="130" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="tintColor" name="BgColorB"/>
+                                                        <state key="normal" image="house" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="menuButtonAction:" destination="4qH-sL-8Ak" eventType="touchUpInside" id="94U-rB-3ut"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVS-ar-yMG">
+                                                        <rect key="frame" x="130" y="0.0" width="130" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="heart" catalog="system"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Egd-06-POJ">
+                                                        <rect key="frame" x="260" y="0.0" width="130" height="36"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="cart" catalog="system"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="0Ph-AE-oDU" secondAttribute="trailing" constant="16" id="1u6-Tx-Wfn"/>
                                             <constraint firstItem="Nl5-NJ-TCu" firstAttribute="leading" secondItem="Qrm-xu-t6a" secondAttribute="leading" id="2Vv-C8-y4G"/>
                                             <constraint firstAttribute="trailing" secondItem="Y6P-AH-Tjt" secondAttribute="trailing" id="2re-DD-G08"/>
+                                            <constraint firstItem="D3t-k2-Guy" firstAttribute="leading" secondItem="Qrm-xu-t6a" secondAttribute="leading" id="4bb-kY-3r6"/>
                                             <constraint firstItem="0Ph-AE-oDU" firstAttribute="leading" secondItem="Qrm-xu-t6a" secondAttribute="leading" constant="16" id="E9Y-Z9-S6b"/>
                                             <constraint firstItem="Y6P-AH-Tjt" firstAttribute="leading" secondItem="Qrm-xu-t6a" secondAttribute="leading" id="LEL-OE-LCZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="D3t-k2-Guy" secondAttribute="bottom" constant="10" id="Skd-EI-8gd"/>
+                                            <constraint firstItem="D3t-k2-Guy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Nl5-NJ-TCu" secondAttribute="bottom" constant="20" id="TUN-ft-YcF"/>
                                             <constraint firstAttribute="trailing" secondItem="Nl5-NJ-TCu" secondAttribute="trailing" id="cw0-s4-39X"/>
                                             <constraint firstItem="Y6P-AH-Tjt" firstAttribute="top" secondItem="Qrm-xu-t6a" secondAttribute="top" constant="20" id="g15-FH-ROo"/>
                                             <constraint firstItem="Nl5-NJ-TCu" firstAttribute="top" secondItem="0Ph-AE-oDU" secondAttribute="bottom" constant="20" id="hhk-Yi-TPK"/>
+                                            <constraint firstAttribute="trailing" secondItem="D3t-k2-Guy" secondAttribute="trailing" id="o0J-7I-GBi"/>
                                             <constraint firstItem="0Ph-AE-oDU" firstAttribute="top" secondItem="Y6P-AH-Tjt" secondAttribute="bottom" constant="30" id="qmU-vL-GHi"/>
                                         </constraints>
                                     </view>
@@ -101,6 +131,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="4qH-sL-8Ak" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="75.669642857142847"/>
         </scene>
@@ -206,7 +237,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmm-er-Z8u">
-                                        <rect key="frame" x="30" y="25" width="330" height="24"/>
+                                        <rect key="frame" x="29.999999999999993" y="25" width="114.33333333333331" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -216,7 +247,7 @@
                                 <constraints>
                                     <constraint firstItem="DgW-fi-JQp" firstAttribute="leading" secondItem="uLN-jj-WBK" secondAttribute="leading" id="3V7-zH-vJm"/>
                                     <constraint firstAttribute="bottom" secondItem="DgW-fi-JQp" secondAttribute="bottom" id="O0M-UL-DqZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="rmm-er-Z8u" secondAttribute="trailing" constant="30" id="eOB-Lg-yoR"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rmm-er-Z8u" secondAttribute="trailing" constant="30" id="eOB-Lg-yoR"/>
                                     <constraint firstAttribute="trailing" secondItem="DgW-fi-JQp" secondAttribute="trailing" id="fVe-ku-sdf"/>
                                     <constraint firstItem="rmm-er-Z8u" firstAttribute="top" secondItem="uLN-jj-WBK" secondAttribute="top" constant="25" id="rwi-5t-yWn"/>
                                     <constraint firstItem="rmm-er-Z8u" firstAttribute="leading" secondItem="uLN-jj-WBK" secondAttribute="leading" constant="30" id="yPg-9J-EZh"/>
@@ -349,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DbJ-a6-tpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1869.5652173913045" y="75.669642857142847"/>
+            <point key="canvasLocation" x="1869.2307692307691" y="75.355450236966817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hcM-ID-zER">
@@ -374,7 +405,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="food_01" width="485" height="479"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <namedColor name="BgColorB">
             <color red="0.16470588235294117" green="0.75294117647058822" blue="0.40392156862745099" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
