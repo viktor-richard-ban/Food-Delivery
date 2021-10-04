@@ -16,6 +16,17 @@ class FoodCollectionViewCell: UICollectionViewCell {
     
     static let reuseIdentifier = "FoodCollectionViewCell"
     
+    var foodModel: FoodModel? {
+        didSet {
+            if let foodModel = foodModel {
+                roundedBackgroundView.backgroundColor = UIColor(hex: foodModel.color)
+                nameLabel.text = foodModel.name
+                priceLabel.text = "$\(foodModel.price).00"
+                foodImageView.image = UIImage(named: foodModel.image)
+            }
+        }
+    }
+    
     override func layoutSubviews() {
         roundedBackgroundView.layer.cornerRadius = 25
     }

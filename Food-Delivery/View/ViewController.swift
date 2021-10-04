@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
@@ -15,6 +17,8 @@ class ViewController: UIViewController {
     var viewModel = MainViewModel()
     var selectedFoodModel: FoodModel?
     
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,8 +27,9 @@ class ViewController: UIViewController {
         filterCollectionView.delegate = self
         filterCollectionView.dataSource = self
         
-        foodCollectionView.delegate = self
-        foodCollectionView.dataSource = self
+        foodCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        
+        bindFoodCollectionView()
         
         registerCell()
     }
@@ -36,12 +41,24 @@ class ViewController: UIViewController {
         let filterNib = UINib(nibName: "FilterCollectionViewCell", bundle: nil)
         filterCollectionView.register(filterNib, forCellWithReuseIdentifier: FilterCollectionViewCell.reuseIdentifier)
         
-        let foodNib = UINib(nibName: "FoodCollectionViewCell", bundle: nil)
-        foodCollectionView.register(foodNib, forCellWithReuseIdentifier: FoodCollectionViewCell.reuseIdentifier)
     }
     
-    private func updateUI() {
-        filterCollectionView.reloadData()
+    private func bindFoodCollectionView() {
+        let foodNib = UINib(nibName: "FoodCollectionViewCell", bundle: nil)
+        foodCollectionView.register(foodNib, forCellWithReuseIdentifier: FoodCollectionViewCell.reuseIdentifier)
+        
+        //Bind data objects to the collection view
+        viewModel.getFoods().bind(to: foodCollectionView.rx.items(cellIdentifier: FoodCollectionViewCell.reuseIdentifier, cellType: FoodCollectionViewCell.self)) { (row,foodModel,cell) in
+            cell.foodModel = foodModel
+        }.disposed(by: disposeBag)
+        
+        //Handle tap event on the cell
+        foodCollectionView.rx.itemSelected.subscribe { [weak self](indexPath: IndexPath) in
+            if let cell = self?.foodCollectionView.cellForItem(at: indexPath) as? FoodCollectionViewCell {
+                self?.selectedFoodModel = cell.foodModel
+                self?.performSegue(withIdentifier: "FoodDetails", sender: self)
+            }
+        }.disposed(by: disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,8 +92,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         switch collectionView {
         case filterCollectionView:
             return viewModel.filterModels.count + 1 //Filter image
-        case foodCollectionView:
-            return viewModel.foodModels.count
         default:
             return 0
         }
@@ -89,16 +104,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
                 return createFilterImageCell(for: indexPath)
             }
             return createFilterCell(for: indexPath)
-        case foodCollectionView:
-            return createFoodCell(for: indexPath)
         default:
             return UICollectionViewCell()
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedFoodModel = viewModel.foodModels[indexPath.row]
-        performSegue(withIdentifier: "FoodDetails", sender: self)
     }
     
     private func createFilterImageCell(for indexPath: IndexPath) -> UICollectionViewCell {
@@ -120,19 +128,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
                 cell.roundedBackgroundView.backgroundColor = UIColor(named: "BgColorA")
             }
             
-            return cell
-        }
-        
-        return UICollectionViewCell()
-    }
-    
-    private func createFoodCell(for indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = foodCollectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reuseIdentifier, for: indexPath) as? FoodCollectionViewCell {
-            let foodModel = viewModel.foodModels[indexPath.row]
-            cell.roundedBackgroundView.backgroundColor = UIColor(hex: foodModel.color)
-            cell.nameLabel.text = foodModel.name
-            cell.priceLabel.text = "$\(foodModel.price).00"
-            cell.foodImageView.image = UIImage(named: foodModel.image)
             return cell
         }
         
